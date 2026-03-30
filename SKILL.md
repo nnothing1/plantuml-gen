@@ -21,6 +21,16 @@ description: "Generate PlantUML diagrams for UML visualizations. Triggers on: Pl
 
 ## Quick Syntax
 
+**⚠️ CRITICAL SYNTAX RULES:**
+
+- **Must strictly follow the syntax for the specific diagram type**
+- **Similar syntax exists between different diagram types, but they CANNOT be mixed**
+- **Example violations:**
+  - Using `A -> B: message` (Sequence syntax) in a Class diagram ❌
+  - Using `class Name` (Class syntax) in a Sequence diagram ❌
+  - Using `if (...) then` (Activity syntax) in a State diagram ❌
+- **Always verify syntax in the corresponding reference file before generating code**
+
 After determining the diagram type, read the corresponding reference file for detailed syntax.
 
 **Core patterns (for initial generation, verify in reference if unsure):**
@@ -62,6 +72,8 @@ Alice -> Bob: Hello
 - `references/use-case-diagram.md`
 - `references/object-diagram.md`
 - `references/timing-diagram.md`
+
+**Source**: All reference files are derived from the official PlantUML documentation at **https://plantuml.com/**
 
 Reference files contain: notes syntax, relationship types, stereotypes, colors, grouping, swimlanes, composite states, fork/join, skinparam, and common mistakes to avoid.
 
